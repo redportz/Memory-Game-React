@@ -17,7 +17,7 @@ function GameBoard() {
             const randomOrderArray = Data.sort(() => 0.5 - Math.random());
             setCardsArray(randomOrderArray);
             setMoves(0);
-            firstMoves(0);
+            firstMove(0);
             setFirstCard(null);
             setSecondCard(null);
             setWon(0);

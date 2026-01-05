@@ -19,12 +19,14 @@ h1 {
 
 }
 
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.buttons{
     align-self: center;
-    padding: 0.5rem 0.8rem;
+}
+
+.menu-btn, .newGame-btn {
+    display: inline;
+    align-items: center;
+    justify-content: center;    padding: 0.5rem 0.8rem;
     font-family: cursive;
     width: 200px;
     font-size: 1.2rem;
@@ -34,6 +36,10 @@ h1 {
     background-color: red;
     color: white;
     margin-top: 4px;
+}
+
+.menu-btn{
+    margin-right: 5px;
 }
 
 .button:hover {

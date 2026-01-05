@@ -1,9 +1,15 @@
 import "./GameBoard.css";
 import React from 'react';
-import Data from '../Data.jsx'
 import Card from '../Card/Card.jsx'
+import cardSets from "../Categories/index.js"
+import { replace, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+
 
 function GameBoard() {
+    const { category } = useParams();
+    const navigate = useNavigate();
     const [cardsArray,setCardsArray] = React.useState([]);
     const [moves, setMoves] = React.useState(0);
     const [firstCard, setFirstCard] = React.useState(null);
@@ -11,16 +17,17 @@ function GameBoard() {
     const [stopFlip, setStopFlip] = React.useState(false);
     const [won, setWon] = React.useState(0);
 
+    const selectedSet = cardSets[category] ?? [];
+
     // starts new game
-    function NewGame() {
-        setTimeout(() => {
-            const randomOrderArray = Data.sort(() => 0.5 - Math.random());
-            setCardsArray(randomOrderArray);
+    function startGame() {
+        const shuffled = [...selectedSet].sort(()  => 0.5 - Math.random());
+            setCardsArray(shuffled);
             setMoves(0);
             setFirstCard(null);
             setSecondCard(null);
+            setStopFlip(false)
             setWon(0);
-        }, 1200);
     }
 
     // helps in storing the first and second card values
@@ -67,10 +74,11 @@ function GameBoard() {
         setMoves((prevValue) => prevValue + 1);
     }
 
+
     // Starts the game for the first time
     React.useEffect(() => {
-        NewGame();
-    }, []);
+        startGame();
+    }, [category]);
 
     return (
         <div className="game-container">
@@ -93,16 +101,17 @@ function GameBoard() {
                 }
             </div>
 
-            {won !== Data.length ? (
+            {won !== selectedSet.length ? (
                 <div className="comments">Moves : {moves}</div>
             ) : (
                 <div className="comments">
                      You Won in {moves} moves 
                 </div>
             )}
-            <button className="button" onClick={NewGame}>
-                New Game
-            </button>
+            <div className="buttons">
+            <button className="menu-btn" onClick={() => navigate("/", {replace: true})}>Menu</button>
+            <button className="newGame-btn" onClick={startGame}>New Game</button>
+            </div>
         </div>
     )
 

@@ -25,14 +25,13 @@ function GameBoard() {
 
     // helps in storing the first and second card values
     function handleSelectedCards(item) {
-          if (!firstCard) {
+          console.log(typeof item);
+        if (firstCard !== null && firstCard.id !== item.id) {
+            setSecondCard(item);
+        } else {
             setFirstCard(item);
-            return;
-        }
-        if (firstCard.id !== item.id) {
-            setSecondCard(item);
-        }else{
-            setSecondCard(item);
+            console.log(firstCard);
+            
         }
     }
 
@@ -89,7 +88,7 @@ function GameBoard() {
                         item = {item}
                         handleSelectedCards={handleSelectedCards}
                         toggled={
-                            item.id ===firstCard || item.id === secondCard || item.matched === true
+                            item.id ===firstCard?.id || item.id === secondCard?.id || item.matched === true
                         }
                         stopflip={stopFlip}
                         />

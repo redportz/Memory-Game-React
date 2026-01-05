@@ -15,6 +15,7 @@
     position: absolute;
     transform: rotateY(90deg);
     transition: all ease-in 0.25s;
+    border-radius: 50%;
 
 }
 

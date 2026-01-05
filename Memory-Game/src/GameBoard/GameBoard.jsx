@@ -25,13 +25,10 @@ function GameBoard() {
 
     // helps in storing the first and second card values
     function handleSelectedCards(item) {
-          console.log(typeof item);
         if (firstCard !== null && firstCard.id !== item.id) {
             setSecondCard(item);
         } else {
             setFirstCard(item);
-            console.log(firstCard);
-            
         }
     }
 

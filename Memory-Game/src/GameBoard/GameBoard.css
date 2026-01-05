@@ -15,7 +15,7 @@
 h1 {
     align-self: start;
     font-size: 2.5rem;
-    color: rgb(247, 247, 247);
+    color: rgb(255, 0, 0);
 
 }
 
@@ -23,6 +23,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
     padding: 0.5rem 0.8rem;
     font-family: cursive;
     width: 200px;
@@ -33,7 +34,6 @@ h1 {
     background-color: red;
     color: white;
     margin-top: 4px;
-    margin-left: 55%;
 }
 
 .button:hover {
@@ -47,7 +47,7 @@ h1 {
     display: grid;
     margin: auto;
     margin-top: 3rem;
-    grid-template-columns: repeat(4, 9rem);
+    grid-template-columns: repeat(6, 9rem);
     place-items: center;
     row-gap: 2rem;
 }

@@ -17,7 +17,6 @@ function GameBoard() {
             const randomOrderArray = Data.sort(() => 0.5 - Math.random());
             setCardsArray(randomOrderArray);
             setMoves(0);
-            firstMove(0);
             setFirstCard(null);
             setSecondCard(null);
             setWon(0);
@@ -26,10 +25,14 @@ function GameBoard() {
 
     // helps in storing the first and second card values
     function handleSelectedCards(item) {
-        if (firstCard !== null && firstCard.id !== item.id) {
+          if (!firstCard) {
+            setFirstCard(item);
+            return;
+        }
+        if (firstCard.id !== item.id) {
             setSecondCard(item);
         }else{
-            setCardsArray(item);
+            setSecondCard(item);
         }
     }
 
@@ -82,11 +85,11 @@ function GameBoard() {
                 {
                     cardsArray.map((item) => (
                         <Card
-                        item = {item}
                         key = {item.id}
+                        item = {item}
                         handleSelectedCards={handleSelectedCards}
                         toggled={
-                            item ===firstCard || item === secondCard || item.matched === true
+                            item.id ===firstCard || item.id === secondCard || item.matched === true
                         }
                         stopflip={stopFlip}
                         />

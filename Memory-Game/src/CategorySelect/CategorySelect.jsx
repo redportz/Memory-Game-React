@@ -17,7 +17,7 @@ function CategorySelect() {
                     key ={`${category}s_btn`}
                     onClick = {()  => navigate(`/game/${category}`)}
                     >
-                <img src={`/src/assets/${category}s/${category}_1.jpg`} alt={`${category}`} />
+                <img src={`/assets/${category}s/${category}_1.jpg`} alt={`${category}`} />
                 <p className="category_label">
                 {category.replace(/_/g," ").toUpperCase()}                   
                 </p>

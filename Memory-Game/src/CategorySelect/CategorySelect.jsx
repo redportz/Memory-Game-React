@@ -7,20 +7,25 @@ function CategorySelect() {
     const navigate = useNavigate();
 
     return (
-        <div>
-            <h1>Select a Category</h1>
-
-            {console.log(cardSets)}
-            {Object.keys(cardSets).map((key) =>(
-                <button 
-                    key = {key}
-                    onClick = {()  => navigate(`/game/${key}`)}
-                >
-                {key.toUpperCase()}                   
+        <div className="container">
+            <h1>Select a category</h1>
+            <div className="options">
+            {Object.keys(cardSets).map((category) =>(
+                <div key={category} className={`${category}s categories`}>
+                <button
+                    className="category_btn" 
+                    key ={`${category}s_btn`}
+                    onClick = {()  => navigate(`/game/${category}`)}
+                    >
+                <img src={`/src/assets/${category}s/${category}_1.jpg`} alt={`${category}`} />
+                <p className="category_label">
+                {category.replace(/_/g," ").toUpperCase()}                   
+                </p>
                 </button>            
+                    </div>
             ))}
+            </div>
         </div>
     );
 }
-
 export default CategorySelect

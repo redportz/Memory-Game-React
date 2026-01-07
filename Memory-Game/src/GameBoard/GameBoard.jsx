@@ -101,11 +101,13 @@ function GameBoard() {
                 }
             </div>
 
-            {won !== selectedSet.length ? (
+            {won !== selectedSet.length -1 ? (
                 <div className="comments">Moves : {moves}</div>
             ) : (
-                <div className="comments">
-                     You Won in {moves} moves 
+                <div className="win_screen">
+                     <p className="win_text">You Won! <br />
+                      Moves <p>{moves}</p></p>
+                      <button className="play_again_btn" onClick={startGame}>Play Again?</button>
                 </div>
             )}
             <div className="buttons">

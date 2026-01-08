@@ -100,8 +100,7 @@ function GameBoard() {
                     ))
                 }
             </div>
-
-            {won !== selectedSet.length -1 ? (
+            {won !== selectedSet.length/2  ? (
                 <div className="comments">Moves : {moves}</div>
             ) : (
                 <div className="win_screen">

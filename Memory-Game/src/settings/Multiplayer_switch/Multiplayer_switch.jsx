@@ -1,6 +1,6 @@
 import React from 'react';
 import { replace, useNavigate } from "react-router-dom";
-import "./multiplayer_switch.css";
+import "./Multiplayer_switch.css";
 
 function Multiplayer_switch({multiplayerMode, setMultiplayerMode}) {
 

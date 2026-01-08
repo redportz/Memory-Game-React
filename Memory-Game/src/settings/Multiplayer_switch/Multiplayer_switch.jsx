@@ -2,12 +2,10 @@ import React from 'react';
 import { replace, useNavigate } from "react-router-dom";
 import "./multiplayer_switch.css";
 
-function Multiplayer_switch(){
-
-    const [multiplayer, setMultiplayer] = React.useState(false)
+function Multiplayer_switch({multiplayerMode, setMultiplayerMode}) {
 
     const handleMultiplayerToggle = () => {
-        setMultiplayer((prev) => !prev);
+        setMultiplayerMode((prev) => !prev);
     }
 
     return(
@@ -15,17 +13,17 @@ function Multiplayer_switch(){
             <label className='multiplayer-label' style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
                 <input 
                 type="checkbox"
-                checked={multiplayer}
+                checked={multiplayerMode}
                 onChange={handleMultiplayerToggle}
                 style={{display:"none"}}
                  />
                  <p className='no-select'>Multiplayer:&nbsp;</p>
         <span className='multi_switch_background'
-        style={multiplayer ? {backgroundColor: "#4caf50"} : {backgroundColor: "#ccc"}}
+        style={multiplayerMode ? {backgroundColor: "#4caf50"} : {backgroundColor: "#ccc"}}
         >
           <span className='multi_switch_position_changer'
             style={{
-              left: multiplayer ? "26px" : "2px"
+              left: multiplayerMode ? "26px" : "2px"
             }}
           ></span>
             </span>

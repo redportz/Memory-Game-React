@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 
 
-function GameBoard() {
+function GameBoard({multiplayerMode}) {
     const { category } = useParams();
     const navigate = useNavigate();
     const [cardsArray,setCardsArray] = React.useState([]);

@@ -77,7 +77,7 @@ h1 {
     margin: 7px;
 }
 
-.win_screen{
+.win_screen,  .multiplayer-win_screen{
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -89,15 +89,18 @@ h1 {
     background-color: red;
     border-radius: 30px;
     color: white;
+    justify-content: center;
 }
 
-.win_screen .win_text{
+
+.win_screen .win_text, .multiplayer-win_screen{
     font-size: 50px;
-    height: 80%;
     align-content: center;
     text-align: center;
 }
-
+.multiplayer-win_screen{
+    height: 350px;
+}
 .play_again_btn{
     background-color: hsl(1, 0%, 7%);
     align-self: center;

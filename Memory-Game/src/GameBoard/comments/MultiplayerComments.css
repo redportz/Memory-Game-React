@@ -1,0 +1,13 @@
+.multi-comments{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.player-indicator{
+    font-weight: bold;
+    margin-left: 10px;
+    width: 200px;
+    color: white;
+}

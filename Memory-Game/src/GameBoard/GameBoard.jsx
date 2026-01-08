@@ -115,25 +115,34 @@ function GameBoard({multiplayerMode}) {
                     ))
                 }
             </div>
-            {multiplayerMode ? 
+            {multiplayerMode ? (
             // display for multiplayer mode on
-            (won !== selectedSet.length/2  ? (
-                <Multiplayer_comments 
-                playerOneScore={playerOneScore} 
-                moves={moves} 
-                playerTwoScore={playerTwoScore} 
-                playerTurn={playerTurn} />   
-            
-            ):(null))
-            :(won !== 0  ? (
-                <div className="comments">Moves : {moves}</div>
-            ) : (
-                <div className="win_screen">
-                     <p className="win_text">You Won! <br />
-                      Moves br<span>{moves}</span>
-                        </p>
-                      <button className="play_again_btn" onClick={startGame}>Play Again?</button>
-                </div>
+                    won !== selectedSet.length/2  ? (
+                    <Multiplayer_comments 
+                    playerOneScore={playerOneScore} 
+                    moves={moves} 
+                    playerTwoScore={playerTwoScore} 
+                    playerTurn={playerTurn} />   
+                
+                ):
+                (<div className="multiplayer-win_screen">
+                        <p className="win_text">
+                            Player {playerOneScore > playerTwoScore ? '1' : playerTwoScore > playerOneScore ? '2' : 'No one, it\'s a Tie!'} Wins! <br />
+                            Final Scores <br />
+                            Player 1: <span>{playerOneScore}</span> <br />
+                            Player 2: <span>{playerTwoScore}</span>
+                            </p>
+                        <button className="play_again_btn" onClick={startGame}>Play Again?</button>
+                    </div>))
+            :(won !== selectedSet.length/2  ? (
+                    <div className="comments">Moves : {moves}</div>
+                ) : (
+                    <div className="win_screen">
+                        <p className="win_text">You Won! <br />
+                        Moves <br /><span>{moves}</span>
+                            </p>
+                        <button className="play_again_btn" onClick={startGame}>Play Again?</button>
+                    </div>
             ))}
             <div className="buttons">
             <button className="to-menu-btn" onClick={() => navigate("/", {replace: true})}>Menu</button>

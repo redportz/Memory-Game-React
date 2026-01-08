@@ -1,18 +1,53 @@
-import Multiplayer_switch from "./multiplayer_switch"
+import MultiplayerSwitch from "./Multiplayer_switch/Multiplayer_switch.jsx"
+import './menu.css';
+import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
 
-function Menu() {
-    
-    return(
-        <div className="menu-container">
-            <button className="menu-btn" aria-label="Open Menu">
-                <i className="fa-solid fa-bars"></i>
-              </button>
-            
-            <div className="menuItems">
-                <Multiplayer_switch />
-            </div>
+function Menu({multiplayerMode, setMultiplayerMode}) {
+  const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+
+  return (
+    <>
+      {/* Menu button */}
+      <div className="menu-fab">
+
+      <button
+        className="menu-btn"
+        onClick={() => setMenuIsOpen(prev => !prev)}
+        aria-label="Open Menu"
+        >
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      </div>
+
+      {/* Overlay (click to close) */}
+      {menuIsOpen && (
+        <div className="menu-overlay" onClick={() => setMenuIsOpen(false)}>
+          {/* STOP click from closing when you click inside panel */}
+          <div className="menu-panel" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="close-btn"
+              onClick={() => setMenuIsOpen(false)}
+              aria-label="Close Menu"
+            >
+              <FontAwesomeIcon icon={faRectangleXmark} />
+            </button>
+
+            <ul className="menu-options">
+              <li>
+                <MultiplayerSwitch
+                  multiplayerMode={multiplayerMode}
+                  setMultiplayerMode={setMultiplayerMode}
+                />
+              </li>
+            </ul>
+          </div>
         </div>
-    )
+      )}
+    </>
+  );
 }
+
 
 export default Menu

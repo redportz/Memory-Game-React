@@ -103,6 +103,15 @@ h1 {
     align-self: center;
 }
 
-.win_text p{
+.win_text span{
     color: green;
+}
+
+
+.player-one{
+    background-color: blue;
+}
+
+.player-two{
+    background-color: green;
 }

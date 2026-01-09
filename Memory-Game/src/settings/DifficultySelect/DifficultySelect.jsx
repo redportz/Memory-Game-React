@@ -8,8 +8,8 @@ function Difficulty_selector({difficulty, setDifficulty}) {
 
     return (
         <>
-                <label htmlFor="Modes">Modes</label>
-                <ul>
+                <ul className="modes-list">
+                <label htmlFor="Modes">Modes:</label>
                   <li><button className={difficulty === "beginner" ? "selected-diff" : "difficulty"} 
                     onClick={() => handleDifficultyChange("beginner")}>Beginner</button>
                     </li>

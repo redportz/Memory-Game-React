@@ -1,6 +1,26 @@
-
-
+.modes-list {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;   /* removes bullets */
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+}
+.modes-list label{
+    align-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.difficulty, .selected-diff{
+    border-radius: 5px;
+    padding: 10px 10px;
+}
 .selected-diff{
     background-color: #4CAF50;
     color: white;
+}
+.difficulty{
+    background-color: #e7e7e7;
+    color: black;
+    cursor: pointer;
 }

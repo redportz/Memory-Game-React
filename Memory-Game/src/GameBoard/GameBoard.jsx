@@ -9,7 +9,7 @@ import Multiplayer_comments from "./comments/MultiplayerComments.jsx";
 
 
 function GameBoard({multiplayerMode}) {
-    const { category } = useParams();
+    const { category, difficulty } = useParams();
     const navigate = useNavigate();
     const [cardsArray,setCardsArray] = React.useState([]);
     const [moves, setMoves] = React.useState(0);
@@ -26,13 +26,29 @@ function GameBoard({multiplayerMode}) {
 
     // starts new game
     function startGame() {
-        const shuffled = [...selectedSet].sort(()  => 0.5 - Math.random());
+        console.log(difficulty);
+        
+        const setLength = 
+        difficulty === "beginner" ? 4 :
+        difficulty === "intermediate" ? 8 :
+        12;
+
+        const baseSet = cardSets[category] ?? [];
+
+        const part1 = baseSet.slice(0, setLength);
+        const part2 = baseSet.slice(12, 12 + setLength);
+        const deck = [...part1, ...part2];
+
+        const shuffled = [...deck].sort(()  => 0.5 - Math.random());
             setCardsArray(shuffled);
             setMoves(0);
             setFirstCard(null);
             setSecondCard(null);
             setStopFlip(false)
             setWon(0);
+            setPlayerOneScore(0);
+            setPlayerTwoScore(0);
+            setPlayerTurn(1);
     }
 
     // helps in storing the first and second card values
@@ -93,14 +109,14 @@ function GameBoard({multiplayerMode}) {
     // Starts the game for the first time
     React.useEffect(() => {
         startGame();
-    }, [category]);
+    }, [category, difficulty]);
 
     return (
         <div className="game-container">
             <div className="header">
                 <h1>Memory Game</h1>
             </div>
-            <div className="board">
+            <div className={`board difficulty-${difficulty}`}>
                 {
                     cardsArray.map((item) => (
                         <Card

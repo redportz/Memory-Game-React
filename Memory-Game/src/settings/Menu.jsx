@@ -1,10 +1,11 @@
 import MultiplayerSwitch from "./Multiplayer_switch/Multiplayer_switch.jsx"
-import './Menu.css';
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
+import './Menu.css';
+import DifficultySelect from './DifficultySelect/DifficultySelect.jsx';
 
-function Menu({multiplayerMode, setMultiplayerMode}) {
+function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty}) {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
   return (
@@ -42,12 +43,10 @@ function Menu({multiplayerMode, setMultiplayerMode}) {
                 />
               </li>
               <li>
-                <label htmlFor="Modes">Modes</label>
-                <ul>
-                  <li><button style={{backgroundColor: "red"}}>Beginner</button></li>
-                  <li><button>Intermediate</button></li>
-                  <li><button>Advanced</button></li>
-                </ul>
+                <DifficultySelect
+                  difficulty={difficulty}
+                  setDifficulty={setDifficulty}
+                />
               </li>
             </ul>
           </div>

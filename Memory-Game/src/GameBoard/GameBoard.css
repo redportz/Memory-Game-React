@@ -62,9 +62,20 @@ h1 {
 
 .board {
     display: grid;
-    grid-template-columns: repeat(6, 9rem);
     place-items: center;
     row-gap: 2rem;
+}
+
+.board.difficulty-beginner {
+    grid-template-columns: repeat(4, 9rem);
+}
+
+.board.difficulty-intermediate {
+    grid-template-columns: repeat(4, 9rem);
+}
+
+.board.difficulty-advanced {
+    grid-template-columns: repeat(6, 9rem);
 }
 
 .comments {

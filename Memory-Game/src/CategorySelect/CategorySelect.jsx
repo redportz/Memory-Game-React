@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import cardSets from "../Categories/index.js";
 import "./CategorySelect.css";
 
-function CategorySelect() {
+function CategorySelect({difficulty}) {
     const navigate = useNavigate();
 
     return (
@@ -15,7 +15,7 @@ function CategorySelect() {
                 <button
                     className="category_btn" 
                     key ={`${category}s_btn`}
-                    onClick = {()  => navigate(`/game/${category}`)}
+                    onClick = {()  => navigate(`/game/${category}/${difficulty}`)}
                     >
                 <img src={`/assets/${category}s/${category}_1.jpg`} alt={`${category}`} />
                 <p className="category_label">

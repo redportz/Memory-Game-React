@@ -8,7 +8,7 @@ function CategorySelect({difficulty}) {
 
     return (
         <div className="container">
-            <h1>Select a category</h1>
+            <h1>Select category</h1>
             <div className="options">
             {Object.keys(cardSets).map((category) =>(
                 <div key={category} className={`${category}s categories`}>

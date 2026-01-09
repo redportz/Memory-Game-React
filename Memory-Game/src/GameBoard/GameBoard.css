@@ -1,9 +1,14 @@
 .game-container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-height: 645px) {
+    .game-container {
+        height: 100vh;
+    }
 }
 
 .header {
@@ -14,7 +19,9 @@
     justify-content: center;
     align-items: center;
 }
-
+.header h1{
+    text-align: center;
+}
 h1 {
     align-self: start;
     font-size: 2.5rem;
@@ -24,6 +31,7 @@ h1 {
 
 .buttons{
     align-self: center;
+    text-align: center;
 }
 
 .to-menu-btn, .newGame-btn, .play_again_btn, .menu-btn{
@@ -37,9 +45,6 @@ h1 {
     border-style: none;
     color: white;
     margin-top: 4px;
-}
-.to-menu-btn, .newGame-btn, .play_again_btn{
-    width: 200px;
 }
 .to-menu-btn, .newGame-btn, .menu-btn {
     background-color:red;
@@ -129,3 +134,105 @@ h1 {
 .player-two{
     background-color: green;
 }
+
+@media (max-width: 822px) {
+    .board{
+        row-gap: 1em;
+    }
+    .board.difficulty-beginner {
+        grid-template-columns: repeat(4, 6.5rem);
+    }
+
+    .board.difficulty-intermediate {
+        grid-template-columns: repeat(4, 6.5rem);
+    }
+
+    .board.difficulty-advanced {
+        grid-template-columns: repeat(6, 7rem);
+    }
+}
+
+
+@media (max-width: 688px) {
+    .board{
+        row-gap: .5em;
+    }
+    .board.difficulty-beginner .back, .board.difficulty-beginner .face {
+        height: 5em;
+        width: 5em;
+    }
+    .board.difficulty-beginner {
+        grid-template-columns: repeat(3, 5.5rem);
+    }
+
+    .board.difficulty-advanced .back, .board.difficulty-advanced .face,.board.difficulty-intermediate .back, .board.difficulty-intermediate .face {
+        height: 5em;
+        width: 5em;
+    }
+    .board.difficulty-advanced, .board.difficulty-intermediate {
+        grid-template-columns: repeat(4, 5.5rem);
+    }
+}
+
+@media (max-width: 344px) {
+
+    .board.difficulty-beginner .back, .board.difficulty-beginner .face {
+        height: 4em;
+        width: 4em;
+    }
+
+    .board.difficulty-beginner {
+        grid-template-columns: repeat(3, 4.5rem);
+    }
+
+    .board.difficulty-intermediate .back, .board.difficulty-intermediate .face {
+        height: 3.3em;
+        width: 3.3em;
+    }
+    .board.difficulty-intermediate {
+        grid-template-columns: repeat(4, 3.5rem);
+    }
+
+    .board.difficulty-advanced .back, .board.difficulty-advanced .face {
+        height: 3.5em;
+        width: 3.5em;
+    }
+    .board.difficulty-advanced {
+        grid-template-columns: repeat(4, 3.7rem);
+    }
+}
+
+@media (max-width: 235px) {
+
+    .board.difficulty-advanced .back, .board.difficulty-advanced .face {
+        height: 3em;
+        width: 3em;
+    }
+    .board.difficulty-intermediate {
+        grid-template-columns: repeat(4, 3.25rem);
+    }
+
+    .board.difficulty-advanced {
+        grid-template-columns: repeat(4, 3.2rem);
+    }
+}
+@media (max-width: 210px) {
+
+        .board.difficulty-intermediate .back, .board.difficulty-intermediate .face {
+        height: 2.5em;
+        width: 2.5em;
+    }
+    .board.difficulty-intermediate {
+        grid-template-columns: repeat(4, 2.5rem);
+    }
+
+    .board.difficulty-advanced .back, .board.difficulty-advanced .face {
+        height: 2.5em;
+        width: 2.5em;
+    }
+    .board.difficulty-advanced {
+        grid-template-columns: repeat(4, 2.7rem);
+    }
+
+}
+

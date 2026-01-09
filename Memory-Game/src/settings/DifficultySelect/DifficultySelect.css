@@ -24,3 +24,23 @@
     color: black;
     cursor: pointer;
 }
+
+@media (max-width: 420px) {
+  .modes-list{
+    gap: 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .modes-list{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menus-options li{
+    align-self: center;
+  }
+  .difficulty, .selected-diff{
+    width: 100px;
+    margin-top: 10px;
+  }
+}

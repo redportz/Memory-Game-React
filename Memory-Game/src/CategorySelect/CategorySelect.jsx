@@ -19,7 +19,7 @@ function CategorySelect() {
                     >
                 <img src={`/assets/${category}s/${category}_1.jpg`} alt={`${category}`} />
                 <p className="category_label">
-                {category.replace(/_/g," ").toUpperCase()}                   
+                {`${category.replace(/_/g," ").toUpperCase()}S`}
                 </p>
                 </button>            
                     </div>

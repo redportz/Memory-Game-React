@@ -1,5 +1,5 @@
 import MultiplayerSwitch from "./Multiplayer_switch/Multiplayer_switch.jsx"
-import './menu.css';
+import './Menu.css';
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +11,6 @@ function Menu({multiplayerMode, setMultiplayerMode}) {
     <>
       {/* Menu button */}
       <div className="menu-fab">
-
       <button
         className="menu-btn"
         onClick={() => setMenuIsOpen(prev => !prev)}
@@ -30,10 +29,11 @@ function Menu({multiplayerMode, setMultiplayerMode}) {
               className="close-btn"
               onClick={() => setMenuIsOpen(false)}
               aria-label="Close Menu"
-            >
+              >
               <FontAwesomeIcon icon={faRectangleXmark} />
             </button>
 
+              <h3 className="settings-header">Settings</h3>
             <ul className="menu-options">
               <li>
                 <MultiplayerSwitch

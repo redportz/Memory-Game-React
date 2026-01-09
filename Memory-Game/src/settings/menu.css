@@ -42,3 +42,7 @@
     margin-bottom: 20px;
     text-align: center;
 }
+
+.menu-options li{
+  list-style-type: none;
+}

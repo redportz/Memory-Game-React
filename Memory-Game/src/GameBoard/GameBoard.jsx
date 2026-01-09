@@ -20,11 +20,7 @@ function GameBoard({multiplayerMode}) {
     const [playerTurn, setPlayerTurn] = React.useState(1);
     const [playerOneScore, setPlayerOneScore] = React.useState(0);
     const [playerTwoScore, setPlayerTwoScore] = React.useState(0);
-    const setLength = 
-        difficulty === "beginner" ? 4 :
-        difficulty === "intermediate" ? 8 :
-        12;
-
+    
     const setLength = 
         difficulty === "beginner" ? 4 :
         difficulty === "intermediate" ? 8 :

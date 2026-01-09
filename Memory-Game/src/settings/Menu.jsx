@@ -41,6 +41,14 @@ function Menu({multiplayerMode, setMultiplayerMode}) {
                   setMultiplayerMode={setMultiplayerMode}
                 />
               </li>
+              <li>
+                <label htmlFor="Modes">Modes</label>
+                <ul>
+                  <li><button style={{backgroundColor: "red"}}>Beginner</button></li>
+                  <li><button>Intermediate</button></li>
+                  <li><button>Advanced</button></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

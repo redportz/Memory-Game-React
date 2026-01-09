@@ -20,7 +20,10 @@ function GameBoard({multiplayerMode}) {
     const [playerTurn, setPlayerTurn] = React.useState(1);
     const [playerOneScore, setPlayerOneScore] = React.useState(0);
     const [playerTwoScore, setPlayerTwoScore] = React.useState(0);
-    
+    const setLength = 
+        difficulty === "beginner" ? 4 :
+        difficulty === "intermediate" ? 8 :
+        12;
 
     const selectedSet = cardSets[category] ?? [];
 
@@ -28,10 +31,7 @@ function GameBoard({multiplayerMode}) {
     function startGame() {
         console.log(difficulty);
         
-        const setLength = 
-        difficulty === "beginner" ? 4 :
-        difficulty === "intermediate" ? 8 :
-        12;
+        
 
         const baseSet = cardSets[category] ?? [];
 
@@ -133,7 +133,7 @@ function GameBoard({multiplayerMode}) {
             </div>
             {multiplayerMode ? (
             // display for multiplayer mode on
-                    won !== selectedSet.length/2  ? (
+                    won !== setLength  ? (
                     <Multiplayer_comments 
                     playerOneScore={playerOneScore} 
                     moves={moves} 
@@ -150,7 +150,7 @@ function GameBoard({multiplayerMode}) {
                             </p>
                         <button className="play_again_btn" onClick={startGame}>Play Again?</button>
                     </div>))
-            :(won !== selectedSet.length/2  ? (
+            :(won !== setLength  ? (
                     <div className="comments">Moves : {moves}</div>
                 ) : (
                     <div className="win_screen">

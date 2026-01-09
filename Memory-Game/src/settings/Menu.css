@@ -6,9 +6,11 @@
   z-index: 50;
 }
 
+
+
 /* FULL PAGE OVERLAY */
 .menu-overlay {
-  position: absolute; 
+  position: fixed; 
   inset: 0;
   z-index: 100;
 
@@ -45,4 +47,17 @@
 
 .menu-options li{
   list-style-type: none;
+}
+
+
+
+@media (max-width: 345px) {
+  .menu-fab {
+    position: fixed;
+    top: auto;
+    bottom: 16px;
+  }
+  .menu-btn{
+    border: 2px solid gray;
+  }
 }

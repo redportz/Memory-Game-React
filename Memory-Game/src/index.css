@@ -14,8 +14,10 @@ html, body {
 .home {           /* whatever your page wrapper is */
   min-height: 100vh;
   height: auto;
+  position: relative;
 }
 
-.home {
-    position: relative;
+body{
+    align-content: center;
 }
+

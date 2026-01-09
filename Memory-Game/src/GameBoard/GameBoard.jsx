@@ -25,13 +25,16 @@ function GameBoard({multiplayerMode}) {
         difficulty === "intermediate" ? 8 :
         12;
 
+    const setLength = 
+        difficulty === "beginner" ? 4 :
+        difficulty === "intermediate" ? 8 :
+        12;
+
     const selectedSet = cardSets[category] ?? [];
 
     // starts new game
     function startGame() {
-        console.log(difficulty);
-        
-        
+        console.log(difficulty)        
 
         const baseSet = cardSets[category] ?? [];
 

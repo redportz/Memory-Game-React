@@ -25,7 +25,7 @@
 h1 {
     align-self: start;
     font-size: 2.5rem;
-    color: rgb(255, 0, 0);
+    color: var(--header-color);
 
 }
 
@@ -43,11 +43,11 @@ h1 {
     font-weight: bolder;
     border-radius: 0.7rem;
     border-style: none;
-    color: white;
+    color: var(--btn-text-color);
     margin-top: 4px;
 }
 .to-menu-btn, .newGame-btn, .menu-btn {
-    background-color:red;
+    background-color: var(--button-background-color);
 }
 
 .to-menu-btn, .newGame-btn{
@@ -57,13 +57,6 @@ h1 {
 .to-menu-btn{
     margin-right: 5px;
 }
-
-.button:hover {
-    border: 2px solid black;
-    cursor: pointer;
-}
-
-
 
 .board {
     display: grid;
@@ -85,7 +78,8 @@ h1 {
 
 .comments {
     padding: 0.25rem 1rem;
-    background-color: white;
+    background-color: var(--game-board-comments-background-color);
+    color: var(--game-board-comments-text-color);
     width: 150px;
     align-self: center;
     border-radius: 2rem;
@@ -102,9 +96,9 @@ h1 {
     transform: translate(-50%, -50%);
     height: 270px;
     width: 400px;
-    background-color: red;
+    background-color: var(--win-screen-background-color);
     border-radius: 30px;
-    color: white;
+    color: var(--win-screen-text-color);
     justify-content: center;
 }
 
@@ -123,16 +117,18 @@ h1 {
 }
 
 .win_text span{
-    color: green;
+    color: var(--win-move-text-color);
 }
 
 
 .player-one{
-    background-color: blue;
+    background-color: var(--player1-color);
+    color : var(--player1-text-color);
 }
 
 .player-two{
-    background-color: green;
+    background-color: var(--player2-color);
+    color : var(--player2-text-color);
 }
 
 @media (max-width: 822px) {

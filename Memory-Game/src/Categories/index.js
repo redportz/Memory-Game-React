@@ -4,6 +4,7 @@ import farm_animal from "./farm_animals.js";
 import sea_creature from "./sea_creatures.js";
 import color from "./colors.js";
 import fruit from "./fruits.js";
+import dog from "./dogs.js";
 
 
 export default {
@@ -13,4 +14,5 @@ export default {
   sea_creature,
   color,
   fruit,
+  dog,
 };

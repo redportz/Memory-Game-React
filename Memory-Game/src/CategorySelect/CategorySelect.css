@@ -24,7 +24,6 @@ h1{
     flex-direction: column;
     place-self: center;
     background-color: var(--category-card-background-color);
-    align-items: center;
     padding: 10px;
     border-radius: 15px;
     box-sizing: border-box;

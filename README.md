@@ -1,4 +1,4 @@
-#Memory Game (React)
+# Memory Game (React)
 
 A responsive memory card game built with React that supports difficulty settings and optional multiplayer.
 

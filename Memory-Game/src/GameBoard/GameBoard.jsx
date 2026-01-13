@@ -9,7 +9,7 @@ import Multiplayer_comments from "./comments/MultiplayerComments.jsx";
 
 
 function GameBoard({multiplayerMode}) {
-    const { category, difficulty } = useParams();
+    const { category, difficulty} = useParams();
     const navigate = useNavigate();
     const [cardsArray,setCardsArray] = React.useState([]);
     const [moves, setMoves] = React.useState(0);

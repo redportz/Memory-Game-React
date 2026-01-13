@@ -27,6 +27,10 @@
     --category-btn-text-color: white;
 }
 
+[data-theme="dark"] {
+    --background-color:red;
+}
+
 * {
     margin: 0;
     padding: 0;

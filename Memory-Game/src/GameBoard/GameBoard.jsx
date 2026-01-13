@@ -31,8 +31,6 @@ function GameBoard({multiplayerMode, setInGame}) {
 
     // starts new game
     function startGame() {
-        console.log(difficulty)        
-
         const baseSet = cardSets[category] ?? [];
 
         const part1 = baseSet.slice(0, setLength);

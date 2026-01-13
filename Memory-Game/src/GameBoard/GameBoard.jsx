@@ -8,7 +8,7 @@ import Multiplayer_comments from "./comments/MultiplayerComments.jsx";
 
 
 
-function GameBoard({multiplayerMode}) {
+function GameBoard({multiplayerMode, setInGame}) {
     const { category, difficulty} = useParams();
     const navigate = useNavigate();
     const [cardsArray,setCardsArray] = React.useState([]);
@@ -20,6 +20,7 @@ function GameBoard({multiplayerMode}) {
     const [playerTurn, setPlayerTurn] = React.useState(1);
     const [playerOneScore, setPlayerOneScore] = React.useState(0);
     const [playerTwoScore, setPlayerTwoScore] = React.useState(0);
+    
     
     const setLength = 
         difficulty === "beginner" ? 4 :
@@ -107,8 +108,11 @@ function GameBoard({multiplayerMode}) {
 
     // Starts the game for the first time
     React.useEffect(() => {
+        setInGame(true);
         startGame();
-    }, [category, difficulty]);
+        return () => setInGame(false);
+    }, [category, difficulty, setInGame]);
+
 
     return (
         <div className="game-container">

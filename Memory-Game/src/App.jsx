@@ -3,30 +3,14 @@ import CategorySelect from "./CategorySelect/CategorySelect.jsx"
 import GameBoard from "./GameBoard/GameBoard.jsx"
 import Menu from "./settings/Menu.jsx"
 import React from "react";
+import {useTheme} from "./hook/useTheme.js";
 
 function App() {
   
   const [multiplayerMode, setMultiplayerMode] = React.useState(false)
   const [difficulty, setDifficulty] = React.useState("beginner")
   const [inGame, setInGame] = React.useState(false)
-
-
-  const [darkMode, setDarkMode] = React.useState(() => {
-      return localStorage.getItem("theme") === "dark";
-    });
-  
-    // Save theme whenever it changes
-    React.useEffect(() => {
-      localStorage.setItem("theme", darkMode ? "dark" : "light");
-    }, [darkMode]);
-
-      // Apply theme to <html>
-      React.useEffect(() => {
-        document.documentElement.setAttribute(
-          "data-theme",
-          darkMode ? "dark" : "light"
-        );
-      }, [darkMode]);
+  const { darkMode, setDarkMode } = useTheme();
 
 
 

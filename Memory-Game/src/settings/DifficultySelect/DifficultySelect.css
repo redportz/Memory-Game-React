@@ -10,10 +10,12 @@
     align-content: center;
     margin-right: 10px;
     font-weight: bold;
+    color: var(--menu-text-color);
 }
 .difficulty, .selected-diff{
     border-radius: 5px;
     padding: 10px 10px;
+    border-color: var(--back-of-cards-border-color);
 }
 .selected-diff{
     background-color: var(--selected-difficulty-color);
@@ -23,6 +25,10 @@
     background-color: var(--not-selected-difficulty-color);
     color: var(--not-selected-difficulty-text-color);
     cursor: pointer;
+}
+
+.difficulty:hover {
+    background-color: var(--difficulty-hover-color);
 }
 
 @media (max-width: 420px) {

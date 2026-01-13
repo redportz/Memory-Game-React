@@ -3,6 +3,7 @@
     align-items: center;
     cursor: pointer;
     font-weight: bold;
+    color: var(--menu-text-color);
 }
 
 .switch_background{

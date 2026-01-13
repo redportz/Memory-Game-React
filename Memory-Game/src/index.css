@@ -1,7 +1,14 @@
 :root{
     --background-color: rgb(248, 232, 180);
+    --background: linear-gradient(
+        135deg, 
+        rgba(233, 89, 92, 1),
+        #ea6666,
+        rgba(215, 123, 170, 0.8),
+        #764ba2
+        );
+    --button-background-color: rgb(255, 0, 0, 56.9%);
     --btn-text-color : white;
-    --button-background-color: red;
     --menu-background-color: white;
     --switch-on-color: #4CAF50;
     --switch-off-color: #ccc;
@@ -10,7 +17,7 @@
     --selected-difficulty-text-color: white;
     --not-selected-difficulty-color: #e7e7e7;
     --not-selected-difficulty-text-color: black;
-    --close-btn-color: black;
+    --close-btn-color: red;
     --close-btn-hover-color: gray;
     --header-color: #ff0000;
     --player1-color: #1E90FF;
@@ -22,13 +29,24 @@
     --win-screen-text-color: white;
     --game-board-comments-background-color: white;
     --game-board-comments-text-color: black;
-    --category-card-background-color: rgb(255, 115, 0);
-    --category-btn-background-color: red;
+    --category-card-background-color: rgb(255, 115, 0, 47%);
+    --category-btn-background-color: rgb(255, 0, 0, 56.9%);
     --category-btn-text-color: white;
+    --back-of-cards-color: rgb(253, 218, 175);
+    --back-of-cards-border-color: black;
+    --menu-text-color: black;
+    --difficulty-hover-color: #d4d4d4;
+    --border-color: rgba(0, 0, 0, 1);
 }
 
 [data-theme="dark"] {
-    --background-color:red;
+--background: linear-gradient(
+    135deg, 
+    rgba(0, 0, 0, 1),
+    #2c3e50,
+    rgba(44, 62, 80, 0.8),
+    #000000
+    );
 }
 
 * {
@@ -40,6 +58,7 @@
 
 html, body {
     background-color: var(--background-color);
+    background: var(--background);
     height: 100%;
     margin: 0;
 }

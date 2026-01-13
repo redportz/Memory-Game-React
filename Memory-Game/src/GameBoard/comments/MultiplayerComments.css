@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .player-indicator{
@@ -10,4 +11,15 @@
     margin-left: 10px;
     width: 200px;
     color: white;
+}
+
+.player-one{
+    background-color: var(--player1-color);
+    padding: 5px;
+    border-radius: 10px;
+}
+.player-two{
+    background-color: var(--player2-color);
+    padding: 5px;
+    border-radius: 10px;
 }

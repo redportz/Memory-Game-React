@@ -6,7 +6,7 @@ import './Menu.css';
 import DifficultySelect from './DifficultySelect/DifficultySelect.jsx';
 import DarkModeSwitch  from "./DarkMode_switch/DarkMode_switch.jsx";
 
-function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty, inGame}) {
+function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty, inGame, darkMode, setDarkMode}) {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
 
@@ -44,7 +44,9 @@ function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty, in
 
               <li>
                 {/* Dark Mode Switch */}
-                <DarkModeSwitch />
+                <DarkModeSwitch
+                darkMode={darkMode}
+                setDarkMode={setDarkMode} />
 
               </li>
 

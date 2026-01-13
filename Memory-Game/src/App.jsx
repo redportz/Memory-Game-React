@@ -10,6 +10,26 @@ function App() {
   const [difficulty, setDifficulty] = React.useState("beginner")
   const [inGame, setInGame] = React.useState(false)
 
+
+  const [darkMode, setDarkMode] = React.useState(() => {
+      return localStorage.getItem("theme") === "dark";
+    });
+  
+    // Save theme whenever it changes
+    React.useEffect(() => {
+      localStorage.setItem("theme", darkMode ? "dark" : "light");
+    }, [darkMode]);
+
+      // Apply theme to <html>
+      React.useEffect(() => {
+        document.documentElement.setAttribute(
+          "data-theme",
+          darkMode ? "dark" : "light"
+        );
+      }, [darkMode]);
+
+
+
   return (
     <Routes>
       <Route path = "/" element={
@@ -18,7 +38,9 @@ function App() {
             multiplayerMode={multiplayerMode} 
             setMultiplayerMode={setMultiplayerMode} 
             difficulty={difficulty} 
-            setDifficulty={setDifficulty} />
+            setDifficulty={setDifficulty}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode} />
           <CategorySelect
             difficulty={difficulty} />
       </div>} />
@@ -26,6 +48,8 @@ function App() {
         <>
         <Menu
           inGame={inGame}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
         <GameBoard 
           multiplayerMode={multiplayerMode} 

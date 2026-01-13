@@ -1,27 +1,8 @@
 import React from "react";
 import "./DarkMode_switch.css";
 
-function DarkModeSwitch() {
-  const [darkMode, setDarkMode] = React.useState(false);
+function DarkModeSwitch({darkMode, setDarkMode}) {
 
-  // Load saved theme once
-  React.useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) setDarkMode(saved === "dark");
-  }, []);
-
-  // Save theme whenever it changes
-  React.useEffect(() => {
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
-
-  // Apply theme to <html>
-  React.useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      darkMode ? "dark" : "light"
-    );
-  }, [darkMode]);
 
   return (
     <div className="switch-container">

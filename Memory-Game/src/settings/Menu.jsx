@@ -4,12 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
 import './Menu.css';
 import DifficultySelect from './DifficultySelect/DifficultySelect.jsx';
+import DarkModeSwitch  from "./DarkMode_switch/DarkMode_switch.jsx";
 
-function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty}) {
+function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty, inGame}) {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
+
 
   return (
     <>
+      
       {/* Menu button */}
       <div className="menu-fab">
       <button
@@ -20,6 +23,8 @@ function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty}) {
         <FontAwesomeIcon icon={faBars} />
       </button>
       </div>
+
+
 
       {/* Overlay (click to close) */}
       {menuIsOpen && (
@@ -36,18 +41,31 @@ function Menu({multiplayerMode, setMultiplayerMode,difficulty, setDifficulty}) {
 
               <h3 className="settings-header">Settings</h3>
             <ul className="menu-options">
+
               <li>
-                <MultiplayerSwitch
-                  multiplayerMode={multiplayerMode}
-                  setMultiplayerMode={setMultiplayerMode}
-                />
+                {/* Dark Mode Switch */}
+                <DarkModeSwitch />
+
               </li>
-              <li>
-                <DifficultySelect
-                  difficulty={difficulty}
-                  setDifficulty={setDifficulty}
-                />
-              </li>
+
+              {!inGame ? (
+                <li>
+                  <MultiplayerSwitch
+                    multiplayerMode={multiplayerMode}
+                    setMultiplayerMode={setMultiplayerMode}
+                  />
+                </li>
+              ) : null}
+
+
+              {!inGame ? (
+                <li>
+                  <DifficultySelect
+                    difficulty={difficulty}
+                    setDifficulty={setDifficulty}
+                  />
+                </li>
+              ) : null}
             </ul>
           </div>
         </div>

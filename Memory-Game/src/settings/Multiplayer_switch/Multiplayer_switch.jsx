@@ -9,8 +9,8 @@ function Multiplayer_switch({multiplayerMode, setMultiplayerMode}) {
     }
 
     return(
-        <div className='multiplayer-container'>
-            <label className='multiplayer-label' style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
+        <div className='switch-container'>
+            <label className='switch-label' >
                 <input 
                 type="checkbox"
                 checked={multiplayerMode}
@@ -18,10 +18,10 @@ function Multiplayer_switch({multiplayerMode, setMultiplayerMode}) {
                 style={{display:"none"}}
                  />
                  <p className='no-select'>Multiplayer:&nbsp;</p>
-        <span className='multi_switch_background'
-        style={multiplayerMode ? {backgroundColor: "#4caf50"} : {backgroundColor: "#ccc"}}
+        <span className='switch_background'
+        style={multiplayerMode ? {backgroundColor: "var(--switch-on-color)"} : {backgroundColor: "var(--switch-off-color)"}}
         >
-          <span className='multi_switch_position_changer'
+          <span className='switch_position_changer'
             style={{
               left: multiplayerMode ? "26px" : "2px"
             }}

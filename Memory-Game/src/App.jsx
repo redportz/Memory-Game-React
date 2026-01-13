@@ -8,6 +8,7 @@ function App() {
   
   const [multiplayerMode, setMultiplayerMode] = React.useState(false)
   const [difficulty, setDifficulty] = React.useState("beginner")
+  const inGame = window.location.pathname.includes("/game/");
 
   return (
     <Routes>
@@ -22,8 +23,15 @@ function App() {
             difficulty={difficulty} />
       </div>} />
       <Route path="/game/:category/:difficulty" element={
+        <>
+        <Menu
+          inGame={inGame}
+        />
         <GameBoard 
-          multiplayerMode={multiplayerMode} />} />
+          multiplayerMode={multiplayerMode} />
+          </>
+          } 
+          />
       <Route path="*" element={
         <Navigate to="/" replace />} />
     </Routes>
